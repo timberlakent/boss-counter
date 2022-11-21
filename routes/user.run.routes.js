@@ -23,10 +23,13 @@ router.get("/undeadsettlement", (req,res)=>{
     res.send("undead settlement location")
 });
 
-router.get("/cemetaryofash/Iudex-Gundyr", (req,res)=>{
-    res.send("first boss")
-});
+// router.get("/cemetaryofash/Iudex-Gundyr", (req,res)=>{
+//     res.send("first boss")
+// });
 
+router.get("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.index);
 
+//create route
+router.post("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.create);
 
 module.exports = router;
