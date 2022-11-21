@@ -41,5 +41,19 @@ const destroy = (req,res)=>{
     })
 }
 
+//update
+const update = (req,res)=>{
+    db.userRun.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: req.body,
+        },
+        {new: true},
+        (err, updateUserRun)=>{
+            if(err) return res.status(400).json({error: err.message});
+            return res.status(200).json(updateUserRun);
+        }
+    )
+}
 
-module.exports= {index,  show, create, destroy};
+module.exports= {index,  show, create, destroy, update};
