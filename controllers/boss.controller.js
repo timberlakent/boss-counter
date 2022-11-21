@@ -1,6 +1,6 @@
 const { userRun } = require("../models");
 const db = require("../models");
-
+//index
 const index = (req, res) =>{
     db.userRun.find({}, (error, userRun)=>{
         if(error) return res.status(400).json({error: error.message});
@@ -10,7 +10,7 @@ const index = (req, res) =>{
         })
     })
 }
-
+//show
 const show = (req,res) =>{
     db.userRun.findById(req.params.id, (error, userRun)=>{
         if(error) return res.status(400).json({error: error.message});
@@ -20,7 +20,7 @@ const show = (req,res) =>{
         })
     })
 }
-
+//create 
 const create = (req,res)=>{
     db.userRun.create(req.body, (err, createUserRun)=>{
         if(err) return res.status(404).json({error: err.message});
@@ -28,4 +28,18 @@ const create = (req,res)=>{
     })
 }
 
-module.exports= {index,  show, create};
+
+//delete
+const destroy = (req,res)=>{
+    db.userRun.findByIdAndDelete(req.params.id, (error, deletedUserRun)=>{
+        if(!deletedUserRun)
+        return res.status(400).json({error: "Run not found"});
+        if(error) return res.status(400).json({error:message});
+        return res.status(200).json({
+            message: `Run ${deletedUserRun.name} was deleted`,
+        })
+    })
+}
+
+
+module.exports= {index,  show, create, destroy};

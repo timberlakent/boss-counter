@@ -31,5 +31,7 @@ router.get("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.index);
 
 //create route
 router.post("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.create);
+//destroy route
+router.delete("/cemetaryofash/Iudex-Gundyr/:id", ctrls.userRuns.destroy);
 
 module.exports = router;
