@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { userRun } from "../../../backend/models";
-let baseUrl = process.env.REACT_APP_BACKEND_PORT
+// let baseUrl = process.env.REACT_APP_BACKEND_PORT
 
 export class FirstBoss extends Component {
     constructor(props){
@@ -44,8 +44,12 @@ export class FirstBoss extends Component {
                             {this.state.userRun.map((userRun)=>{
                                 return (
                                     <tr key = {userRun._id}>
-                                      
-                                        <td>{userRun.name}</td>
+                                        <td>
+                                            <Link to={`${userRun._id}`}>
+                                                {userRun.name}
+                                            </Link>
+                                        </td>
+                            
                                         <td>{userRun.runNumber}</td>
                                         <td>{userRun.deaths}</td>
                                         <td>{userRun.notes}</td>

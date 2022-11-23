@@ -1,8 +1,13 @@
 import React, {Component} from "react";
+import { useParams } from "react-router-dom";
+
+function withParams(Component) {
+  return (props) => <Component {...props} params={useParams()} />;
+}
 
 // let baseUrl = process.env.REACT_APP_BACKEND_PORT
 
-export class NewRun extends Component {
+export class EditForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,16 +18,42 @@ export class NewRun extends Component {
 
         }
     }
+    componentDidMount(){
+        const { id } = this.props.params;
+        this.getUserRun(id);
+
+    }
+    getUserRun = (id) =>{
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/cemetaryofash/Iudex-Gundyr/${id}`)
+         .then((res)=>{
+            if(res.status === 200) {
+                return res.json();
+            }else {
+                return [];
+            }
+        })
+        .then((data)=>{
+            // this.setState({userRun: data.userRun});
+            this.setState({
+                name: data.userRun.name,
+                runNumber: data.userRun.runNumber,
+                deaths: data.userRun.deaths,
+                notes: data.userRun.notes,
+            })
+        })
+    
+    }
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
         
       };
       handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/cemetaryofash/Iudex-Gundyr`,
+        const { id } = this.props.params;
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/cemetaryofash/Iudex-Gundyr/${id}`,
         
           {
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify({
               name: this.state.name,
               runNumber: this.state.runNumber,
@@ -41,8 +72,8 @@ export class NewRun extends Component {
       };
       render() {
         return (
-          <div className="Personal-Run">
-            <h1>Create a new Run</h1>
+          <div className="Personal-run">
+            <h1>Edit {this.state.name}'s Run </h1>
             <form className="New-run-form" onSubmit={this.handleSubmit}>
               <label>
                 <p>Run Name:</p>
@@ -89,12 +120,11 @@ export class NewRun extends Component {
                   placeholder="Notes for improvement"
                 />
               </label>
-              <button>Add Run</button>
+              <button>Edit Run</button>
             </form>
           </div>
         );
       }
     }
     
-    export default NewRun;
-    
+    export default withParams(EditForm);
