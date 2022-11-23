@@ -1,0 +1,14 @@
+.user-run {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: blueviolet;
+}
+
+header {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
