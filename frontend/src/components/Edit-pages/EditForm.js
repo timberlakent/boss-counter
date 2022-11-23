@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function withParams(Component) {
   return (props) => <Component {...props} params={useParams()} />;
@@ -124,6 +125,16 @@ export class EditForm extends Component {
                 />
               </label>
               <button>Edit Run</button>
+              <button>
+                <Link to="/">
+                    Home
+                </Link>
+              </button>
+              <button>
+                <Link to="/first">
+                    Runs
+                </Link>
+              </button>
             </form>
           </div>
         );
