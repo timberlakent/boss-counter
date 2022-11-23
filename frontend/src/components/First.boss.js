@@ -45,7 +45,7 @@ export class FirstBoss extends Component {
                                 return (
                                     <tr key = {userRun._id}>
                                         <td>
-                                            <Link to={`${userRun._id}`}>
+                                            <Link to={`/delete/${userRun._id}`}>
                                                 {userRun.name}
                                             </Link>
                                         </td>

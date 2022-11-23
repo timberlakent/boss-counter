@@ -43,6 +43,7 @@ export class EditForm extends Component {
         })
     
     }
+    
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
         
@@ -69,7 +70,9 @@ export class EditForm extends Component {
             window.location.href = window.location.href.split("new")[0];
           }
         });
+        
       };
+      
       render() {
         return (
           <div className="Personal-run">
