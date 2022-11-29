@@ -1,8 +1,14 @@
 import React, {Component} from "react";
+import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom";
+
+function withParams(Component) {
+  return (props) => <Component {...props} params={useParams()} />;
+}
 
 // let baseUrl = process.env.REACT_APP_BACKEND_PORT
 
-export class VordtNew extends Component {
+export class DancerEditForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,16 +19,43 @@ export class VordtNew extends Component {
 
         }
     }
+    componentDidMount(){
+        const { id } = this.props.params;
+        this.getUserRun(id);
+
+    }
+    getUserRun = (id) =>{
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/dancer/${id}`)
+         .then((res)=>{
+            if(res.status === 200) {
+                return res.json();
+            }else {
+                return [];
+            }
+        })
+        .then((data)=>{
+            // this.setState({userRun: data.userRun});
+            this.setState({
+                name: data.dancerRun.name,
+                runNumber: data.dancerRun.runNumber,
+                deaths: data.dancerRun.deaths,
+                notes: data.dancerRun.notes,
+            })
+        })
+    
+    }
+    
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
         
       };
       handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/vordt`,
+        const { id } = this.props.params;
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/dancer/${id}`,
         
           {
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify({
               name: this.state.name,
               runNumber: this.state.runNumber,
@@ -35,14 +68,16 @@ export class VordtNew extends Component {
           }
         ).then((response) => {
           if (response.status === 200) {
-            window.location.href = window.location.href.split("new")[0];
+            window.location.href = "/highwalloflothric/dancer";
           }
         });
+        
       };
+      
       render() {
         return (
-          <div className="Personal-Run">
-            <h1>Create a new Run</h1>
+          <div className="edit-run">
+            <h1>Edit {this.state.name}'s Run </h1>
             <form className="New-run-form" onSubmit={this.handleSubmit}>
               <label>
                 <p>Run Name:</p>
@@ -89,11 +124,23 @@ export class VordtNew extends Component {
                   placeholder="Notes for improvement"
                 />
               </label>
-              <button>Add Run</button>
+              <button>
+                <Link className="walls" to="/highwalloflothric/dancer">Edit Run</Link>
+                </button>
+              <button>
+                <Link to="/">
+                    Home
+                </Link>
+              </button>
+              <button>
+                <Link to="/highwalloflothric/dancer">
+                    Runs
+                </Link>
+              </button>
             </form>
           </div>
         );
       }
     }
     
-    export default VordtNew;
+    export default withParams(DancerEditForm);

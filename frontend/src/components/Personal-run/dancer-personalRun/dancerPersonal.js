@@ -7,7 +7,7 @@ function withParams(Component) {
 };
 
 
-export class VordtPersonalRun extends Component {
+export class DancerPersonalRun extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,10 +19,10 @@ export class VordtPersonalRun extends Component {
     }
     componentDidMount() {
         const {id} = this.props.params;
-        this.getVordtRun(id);
+        this.getDancerRun(id);
     }
-    getVordtRun = (id) =>{
-        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/Vordt/${id}`)
+    getDancerRun = (id) =>{
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/dancer/${id}`)
         .then((res)=>{
             if(res.status === 200){
                 return res.json();
@@ -32,22 +32,22 @@ export class VordtPersonalRun extends Component {
         })
         .then((data)=>{
             this.setState({
-                name: data.vordtRun.name,
-                runNumber: data.vordtRun.runNumber,
-                deaths: data.vordtRun.deaths,
-                notes: data.vordtRun.notes,
+                name: data.dancerRun.name,
+                runNumber: data.dancerRun.runNumber,
+                deaths: data.dancerRun.deaths,
+                notes: data.dancerRun.notes,
             })
         })
     }
     handleDelete=()=>{
         const { id } = this.props.params;
-        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/Vordt/${id}`,
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/dancer/${id}`,
         {
         method: "DELETE",
     }
         ).then((response)=>{
             if(response.status === 200){
-                window.location.href = "/highwalloflothric/Vordt";
+                window.location.href = "/highwalloflothric/dancer";
             }
         })
 }
@@ -75,10 +75,10 @@ render() {
                 </tbody>
             </table>
             <div className="links">
-                 <Link className="edit" to={`/highwalloflothric/vordt/${this.props.params.id}`}>
+                 <Link className="edit" to={`/highwalloflothric/dancer/${this.props.params.id}`}>
                     Edit
                 </Link> 
-                 <Link className="delete" onClick={this.handleDelete} to={"/"}>
+                 <Link className="delete" onClick={this.handleDelete} to={"/highwalloflothric/dancer"}>
                     Delete
                 </Link> 
             </div>
@@ -88,4 +88,4 @@ render() {
 }
 }
 
-export default withParams(VordtPersonalRun);
+export default withParams(DancerPersonalRun);

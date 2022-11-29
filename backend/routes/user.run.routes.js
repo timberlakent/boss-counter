@@ -38,6 +38,9 @@ router.delete("/highwalloflothric/vordt/:id", ctrls.vordtRuns.destroy);
 //update route
 router.put("/highwalloflothric/vordt/:id", ctrls.vordtRuns.update);
 
+
+
+
 //routes for GUNDYR
 router.get("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.index);
 router.get("/cemetaryofash/Iudex-Gundyr/:id", ctrls.userRuns.show);
@@ -48,5 +51,19 @@ router.post("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.create);
 router.delete("/cemetaryofash/Iudex-Gundyr/:id", ctrls.userRuns.destroy);
 //update route
 router.put("/cemetaryofash/Iudex-Gundyr/:id", ctrls.userRuns.update);
+
+
+
+//routes for DANCER
+router.get("/highwalloflothric/dancer", ctrls.dancerRuns.vordtIndex);
+router.get("/highwalloflothric/dancer/:id", ctrls.dancerRuns.vordtShow);
+
+//create route
+router.post("/highwalloflothric/dancer", ctrls.dancerRuns.create);
+//destroy route
+router.delete("/highwalloflothric/dancer/:id", ctrls.dancerRuns.destroy);
+//update route
+router.put("/highwalloflothric/dancer/:id", ctrls.dancerRuns.update);
+
 
 module.exports = router;

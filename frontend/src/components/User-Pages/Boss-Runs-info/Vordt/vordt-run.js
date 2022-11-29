@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 // let baseUrl = process.env.REACT_APP_BACKEND_PORT
 
-export class NewRun extends Component {
+export class VordtNew extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,7 +19,7 @@ export class NewRun extends Component {
       };
       handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/cemetaryofash/Iudex-Gundyr`,
+        fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/vordt`,
         
           {
             method: "POST",
@@ -41,11 +41,11 @@ export class NewRun extends Component {
       };
       render() {
         return (
-          <div className="new-page">
-            <h1>Create A New Gundyr Run=></h1>
+          <div className="vordt-Run">
+            <h1>Create a new Vordt Run =></h1>
             <form className="New-run-form" onSubmit={this.handleSubmit}>
               <label>
-                <p>Username:</p>
+                <p>Run Name:</p>
                 <input
                   type="text"
                   id="name"
@@ -96,5 +96,4 @@ export class NewRun extends Component {
       }
     }
     
-    export default NewRun;
-    
+    export default VordtNew;

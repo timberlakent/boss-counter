@@ -1,6 +1,7 @@
 * {
   max-width: 100%;
   max-height: 100%;
+  font-family: Honoka Mincho, serif;
 }
 
 header {
@@ -80,6 +81,7 @@ tbody {
 
 td:hover {
   background-color: aquamarine;
+  color: black;
 }
 
 .links {
@@ -87,18 +89,50 @@ td:hover {
   margin-right: 10px;
   font-family: Honoka Mincho, serif;
   color: inherit;
-  text-align: left; 
-  font-size: 30px;
-  
-  
+  text-align: center; 
+  font-size: 30px; 
+}
+ 
+.edit {
+  text-decoration: none;
+  margin-right: 10px;
+  font-family: Honoka Mincho, serif;
+  color: inherit;
+  text-align: center; 
+  font-size: 30px; 
 }
 
-/* body {
-  height: 100vh;
-} */
+.edit:hover {
+  text-decoration: underline orange;
+  margin-right: 10px;
+  font-family: Honoka Mincho, serif;
+  color: inherit;
+  text-align: center; 
+  font-size: 30px; 
+}
+
+.delete {
+  text-decoration: none;
+  margin-right: 10px;
+  font-family: Honoka Mincho, serif;
+  color: inherit;
+  text-align: center; 
+  font-size: 30px; 
+}
+
+.delete:hover {
+  text-decoration: underline orange;
+  margin-right: 10px;
+  font-family: Honoka Mincho, serif;
+  color: inherit;
+  text-align: center; 
+  font-size: 30px; 
+}
+
+
 
 .cemetary {
-  background-image: url("https://asset.vg247.com/dark_souls_3_ashen_cemetery_iudex_gundyr.jpg/BROK/thumbnail/1600x900/quality/100/dark_souls_3_ashen_cemetery_iudex_gundyr.jpg");
+  background-image: url("http://assets.vg247.com/current//2016/04/dark_souls_3_ashen_cemetery_iudex_gundyr.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: gray;
@@ -111,6 +145,20 @@ td:hover {
   color: white;
 
 }
+.high-wall {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/272/122/325/dark-souls-iii-dark-souls-gothic-midevil-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: gray;
+  border-radius: 10px;
+  border-color: black;
+  text-align: left;
+  font-size: 20px;
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
 .wall:hover {
   text-decoration: underline red;
   margin-right: 10px;
@@ -125,6 +173,143 @@ td:hover {
   text-decoration: none;
   margin-right: 10px;
   font-family: Honoka Mincho, serif;
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+
+
+.wall-1, .wall-2, .wall-3, .wall-4, .wall-5, .wall-6, .wall-7, .wall-8, .wall-9, .wall-10, .wall-11, .wall-12, .wall-13, .wall-14{
+  text-decoration: none;
+  margin-right: 10px;
+  font-family: Honoka Mincho, serif;
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-1:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-2:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-3:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-4:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-5:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-6:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-7:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-8:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-9:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-10:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-11:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-12:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-13:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
+  color: inherit;
+  text-align: left; 
+  
+  
+}
+.wall-14:hover {
+  text-decoration: underline red;
+  margin-right: 10px;
+  
   color: inherit;
   text-align: left; 
   
@@ -166,4 +351,77 @@ p {
 
 h1, h2 {
   font-family: Honoka Mincho, serif;
+}
+
+label {
+  text-align: center;
+  background-color: #ff0000;
+  font-size: 10px;
+  font-family: Honoka Mincho, serif;
+
+}
+
+.new-page {
+  background-image: url("https://assets.reedpopcdn.com/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: gray; */
+  border-radius: 10px;
+  border-color: black;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: Honoka Mincho, serif;
+}
+
+.edit-run {
+  background-image: url("https://assets.reedpopcdn.com/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: gray; */
+  border-radius: 10px;
+  border-color: black;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: Honoka Mincho, serif;
+
+}
+
+.vordt-Run {
+  background-image: url("https://assets.reedpopcdn.com/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: gray; */
+  border-radius: 10px;
+  border-color: black;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: Honoka Mincho, serif;
+}
+
+.Gundyr-Run {
+  background-image: url("https://assets.reedpopcdn.com/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/watch-this-latest-dark-souls-3s-gameplay-trailer-1456338082545.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: gray; */
+  border-radius: 10px;
+  border-color: black;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: Honoka Mincho, serif;
+}
+
+.gif {
+  position: absolute;
 }

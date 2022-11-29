@@ -76,7 +76,7 @@ export class EditForm extends Component {
       
       render() {
         return (
-          <div className="Personal-run">
+          <div className="new-page">
             <h1>Edit {this.state.name}'s Run </h1>
             <form className="New-run-form" onSubmit={this.handleSubmit}>
               <label>

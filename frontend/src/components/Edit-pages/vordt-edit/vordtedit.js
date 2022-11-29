@@ -76,7 +76,7 @@ export class VordtEditForm extends Component {
       
       render() {
         return (
-          <div className="Personal-run">
+          <div className="edit-run">
             <h1>Edit {this.state.name}'s Run </h1>
             <form className="New-run-form" onSubmit={this.handleSubmit}>
               <label>

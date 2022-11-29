@@ -47,14 +47,14 @@ export class PersonalRun extends Component {
     }
         ).then((response)=>{
             if(response.status === 200){
-                window.location.href = window.location.href.split(id)[0];
+                window.location.href = "/first";
             }
         })
 }
 render() {
     return(
         <>
-        <div className ="Personal-Run">
+        <div className ="Gundyr-Run">
             <h1>{this.state.name}'s Run</h1>
             <table border="0" cellSpacing="0" cellPadding="0">
                 <tbody>
@@ -82,6 +82,7 @@ render() {
                     Delete
                 </Link> 
             </div>
+            
         </div>
         </>
     )

@@ -1,5 +1,5 @@
 import React from "react";
-import Vordt from "./vordt";
+import Vordt from "./vordt.boss";
 
  
 const SecondBoss = () =>{

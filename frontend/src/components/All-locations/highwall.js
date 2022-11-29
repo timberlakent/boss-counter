@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function HighWall() {
   return (
-    <div className="cemetary">
+    <div className="high-wall">
       <div>
         <header>
         <h1>High Wall Of Lothric</h1>
@@ -18,7 +18,7 @@ function HighWall() {
         </Link>
 
         <div className="wall">
-        <Link className="iudex-gundyr" to="/highwalloflothric/Vordt">
+        <Link className="iudex-gundyr" to="/highwalloflothric/Dancer">
           Dancer of the Boreal Valley
           
         </Link>
