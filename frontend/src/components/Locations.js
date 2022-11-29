@@ -19,7 +19,7 @@ function Locations() {
         
        
        <div className="wall">
-       <Link className="wall" to="first">
+       <Link className="wall" to="highwalloflothric">
           High Wall of Lothric
         </Link>
         </div>

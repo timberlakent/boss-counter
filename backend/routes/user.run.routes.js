@@ -27,6 +27,18 @@ router.get("/undeadsettlement", (req, res) => {
 //     res.send("first boss")
 // });
 
+//Routes for Vordt
+router.get("/highwalloflothric/vordt", ctrls.vordtRuns.vordtIndex);
+router.get("/highwalloflothric/vordt/:id", ctrls.vordtRuns.vordtShow);
+
+//create route
+router.post("/highwalloflothric/vordt", ctrls.vordtRuns.create);
+//destroy route
+router.delete("/highwalloflothric/vordt/:id", ctrls.vordtRuns.destroy);
+//update route
+router.put("/highwalloflothric/vordt/:id", ctrls.vordtRuns.update);
+
+//routes for GUNDYR
 router.get("/cemetaryofash/Iudex-Gundyr", ctrls.userRuns.index);
 router.get("/cemetaryofash/Iudex-Gundyr/:id", ctrls.userRuns.show);
 

@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 // import { userRun } from "../../../backend/models";
 // let baseUrl = process.env.REACT_APP_BACKEND_PORT
 
-export class FirstBoss extends Component {
+export class Vordt extends Component {
     constructor(props){
         super(props);
             this.state = {
-                userRun:[],
+                vordtRun:[],
             }
         }
         componentDidMount() {
-            this.getUserRun();
+            this.getVordtRun();
         }
-        getUserRun = () =>{
-            fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/cemetaryofash/Iudex-Gundyr`
+        getVordtRun = () =>{
+            fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/highwalloflothric/vordt`
             )
             .then((res)=>{
                 if (res.status === 200){
@@ -24,18 +24,18 @@ export class FirstBoss extends Component {
                 }
             })
             .then((data)=>{
-                this.setState({userRun: data.userRun});
+                this.setState({vordtRun: data.vordtRun});
             })
         }
         render() {
             return(
               
                 <div className="firstboss"> 
-                <img src="https://gamingbolt.com/wp-content/uploads/2019/06/Dark-Souls-3.jpg"></img>
-                <h1>Iudex Gundyr</h1>
-                <h3>Health: 1,037</h3>
-                <h3>Souls Dropped: 3,000</h3>
-                <h3>Weak to: Strike, Lightning, Bleed, Frostbite</h3>
+                <img src="https://i.ytimg.com/vi/4b7EKG7cOik/maxresdefault.jpg"></img>
+                <h2>Vordt of the Borreal valley</h2>
+                <h3>Health: 1328</h3>
+                <h3>Souls Dropped: 3000</h3>
+                <h3>Weak to: Dark , Strike</h3>
               
                     <h1>Player Runs</h1>
                     <table>
@@ -48,28 +48,28 @@ export class FirstBoss extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.userRun.map((userRun)=>{
+                            {this.state.vordtRun.map((vordtRun)=>{
                                 return (
-                                    <tr className="td" key = {userRun._id}>
+                                    <tr className="td" key = {vordtRun._id}>
                                         
                                         <td>
-                                            <Link className="wall" to={`/delete/${userRun._id}`}>
-                                                {userRun.name}
+                                            <Link className="wall" to={`/vordt/${vordtRun._id}`}>
+                                                {vordtRun.name}
                                             </Link>
                                         </td>
                             
-                                        <td>{userRun.runNumber}</td>
+                                        <td>{vordtRun.runNumber}</td>
 
-                                        <td>{userRun.deaths}</td>
+                                        <td>{vordtRun.deaths}</td>
 
-                                        <td>{userRun.notes}</td>
+                                        <td>{vordtRun.notes}</td>
                                     </tr>
                                 )
                             })}
                         </tbody>
                     </table>
                     <button>
-                    <Link className="links" to="new">New Run</Link>
+                    <Link className="links" to="/highwalloflothric/Vordt/new">New Run</Link>
                     </button>
                     <button>
                     <Link className="links" to="/">Locations</Link>
@@ -83,4 +83,4 @@ export class FirstBoss extends Component {
 
 
 
-    export default FirstBoss;
+    export default Vordt;
