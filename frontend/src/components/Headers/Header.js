@@ -5,7 +5,8 @@ export class Header extends Component {
     render() {
         return(
             <header>
-                <h1>Locations</h1>
+                <h1>BOSS COUNTER</h1>
+                <h2>A Dark Souls 3 progress tracker</h2>
             </header>
         )
     }
