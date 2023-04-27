@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 
-// let baseUrl = process.env.REACT_APP_BACKEND_PORT
-
 export class DancerNew extends Component {
     constructor(props) {
         super(props);
