@@ -31,6 +31,6 @@ const routes = require("./routes");
 app.use('/', require("./routes/user.run.routes"))
 
 
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(process.env.PORT || 3009, ()=>{
     console.log("Listening on Port 3009")
 });
